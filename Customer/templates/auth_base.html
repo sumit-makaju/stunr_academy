@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Action</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header class="header">
+
+        <a href="#" class="logo"><span>hidden </span> Action</a>
+      {% if request.session.role == 'trainer' %}
+      {% comment %} for trainer  {% endcomment %}
+         <nav class="navbar" style="display: flex;">
+            <a href="{% url 'landingpage' %}">home</a>
+            <a href="{% url 'show_data'%}">service</a>
+           
+            <a href="{% url 'my_students'%}">My clients</a>
+            <a href="{% url 'logout' %}">Log out</a>
+            &nbsp;
+            <div id="login_data">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" style="height: 31px;width: 34px;border-radius: 50%;" alt="avatar" >
+                <a> {{request.session.name}} </a>
+            </div>
+        </nav>
+      {% else %}
+        <nav class="navbar" id="nav">
+            <a href="{% url 'landingpage' %}">home</a>
+            <a href="{% url 'show_data'%}">service</a>
+            <a href="#about">about</a>
+            <a href="{% url 'show_data'%}">package</a>
+            <a href="{% url 'my_booking'%}">My bookings</a>
+            <a href="{% url 'logout' %}">Log out</a>
+            &nbsp;
+            <img src="https://www.w3schools.com/howto/img_avatar.png" style="height: 31px;width: 34px;border-radius: 50%;" alt="avatar" >
+        </nav>
+      {% endif %}
+        
+        <div id="menu-bars" class="fas fa-bars"></div>
+
+    </header>
+
+    {% block content %}
+
+    
+    {% endblock content %}
+
+        <section class="footer">
+            <div class="box-container">
+
+                <div class="box">
+                    <h3>branches<h3>
+                            <a href="#"> <i class="fas fa-map-marker-alt"></i> pokhara</a>
+                            <a href="#"> <i class="fas fa-map-marker-alt"></i> bhaktapur</a>
+                            <a href="#"> <i class="fas fa-map-marker-alt"></i> biratnagar</a>
+                </div>
+
+                <div class="box">
+                    <h3>contact info<h3>
+                            <a href="#"> <i class="fas fa-phone"></i> +9779813456287</a>
+                            <a href="#"> <i class="fas fa-envelope"></i> sammmkk@gmail.com</a>
+                            <a href="#"> <i class="fas fa-envelope"></i> nammk@gmail.com</a>
+                            <a href="#"> <i class="fas fa-map-marker-alt"></i> bkt ,nepal</a>
+                </div>
+
+                <div class="box">
+                    <h3>follow us<h3>
+                            <a href="#"> <i class="fab fa-facebook-f"> </i> facebook </a>
+                            <a href="#"> <i class="fab fa-twitter"> </i> twitter </a>
+                            <a href="#"> <i class="fab fa-instagram"> </i> instagram </a>
+                </div>
+
+            </div>
+            <div class="credit">By <span> apex.Enum</span> all right reserved! </div>
+        </section>
+        <script src="{% static 'js/script.js'%}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+
+<style>
+    #login_data{
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -12px;
+    
+}
+#nav{
+    display: flex;
+}
+</style>
+
+</html>

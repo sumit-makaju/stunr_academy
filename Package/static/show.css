@@ -1,0 +1,6 @@
+table ,td ,th{
+    border: 2px solid red;
+}
+body{
+    margin :20px 20px 20px 20px;
+}

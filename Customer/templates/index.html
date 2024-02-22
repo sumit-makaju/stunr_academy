@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Action</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- <style>
+
+        
+        /* html,
+        body {
+          position: relative;
+          height: 100%;
+        } */
+    
+       
+    
+        .swiper {
+          width: 100%;
+          height: 100%;
+        }
+    
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      </style> -->
+</head>
+
+<body>
+    <header class="header">
+
+        <a href="#" class="logo"><span>hidden </span> Action</a>
+
+        <nav class="navbar">
+            <a href="{% url 'home' %}">home</a>
+            <a href="#service">service</a>
+            <a href="#about">about</a>
+            <!-- <a href="">My bookings</a> -->
+            <a href="#package">package</a>
+            <a href="{% url 'login'%} ">login</a>
+        </nav>
+        <div id="menu-bars" class="fas fa-bars"></div>
+
+    </header>
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3> LEARN WITH THE<span> PROFESSIONALS </span></h3>
+            <!-- <a href="#" class="btn">contact us</a> -->
+        </div>
+
+        <div class="swiper mySwiper home-slider">
+            <div class="swiper-wrapper">
+
+
+                <div class="swiper-slide"> <img src="{% static 'images/img1.jpg'%}" alt=""></div>
+                <div class="swiper-slide"> <img src="{% static 'images/img2.jpg'%}" alt=""></div>
+                <div class="swiper-slide"> <img src="{% static 'images/img3.jpg'%}" alt=""></div>
+                <div class="swiper-slide"> <img src="{% static 'images/img4.jpg'%}" alt=""></div>
+                <div class="swiper-slide"> <img src="{% static 'images/img5.jpg'%}" alt=""></div>
+            </div>
+        </div>
+
+        <!-- <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="{% static 'images/img1.jpg'%}"> </div>
+              <div class="swiper-slide"><img src="{% static 'images/img2.jpg'%}"> </div>
+              <div class="swiper-slide"><img src="{% static 'images/img3.jpg'%}"> </div>
+              <div class="swiper-slide"><img src="{% static 'images/img4.jpg'%}"> </div>
+              <div class="swiper-slide"><img src="{% static 'images/img5.jpg'%}"> </div> -->
+        <!-- <div class="swiper-slide"><img src="eve6.jpg"> </div> -->
+
+        <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div> -->
+    </section>
+
+
+
+
+
+    </section>
+    <!-- swpiier -->
+
+
+
+
+    <section class="service" id="service">
+        <h1 class="heading"> our <span> services</span> </h1>
+        <div class="box-container">
+            <!-- <div class="box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3> veneu selection</h3>
+                <p> whaternalsdsjal </p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-envelope"></i>
+                <h3> invitation card</h3>
+                <p> whaternalsdsjal </p>
+            </div> -->
+            <!-- <div class="box">
+                <i class="fas fa-music"></i>
+                <h3> training</h3>
+                <p> whaternalsdsjal </p>
+            </div> -->
+            <div class="box">
+                <i class="fas fa-utensils"></i>
+                <h3> food and drinks</h3>
+                <p> whaternalsdsjal </p>
+            </div>
+            <div class="box">
+                <i class="fas fa-photo-video"></i>
+                <h3> photos and videos</h3>
+                <p> whaternalsdsjal </p>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3> Location</h3>
+                <p> whaternalsdsjal </p>
+            </div>
+            <div class="box">
+                <i class="fas fa-birthday-cake"></i>
+                <h3> Training</h3>
+                <p> whaternalsdsjal </p>
+            </div>
+    </section>
+
+
+    <section class="about" id="about">
+        <h1 class="heading"><span>about</span> us </h1>
+        <div class="row">
+            <div class="image">
+                <img src="{%static 'images/About.jpg'%}">
+            </div>
+
+
+            <div class="content">
+                <h3>we will give a very special celebration for you</h3>
+                <p>A stunt academy is a training facility or program where individuals learn the skills and techniques
+                    required to perform stunts in various forms of entertainment, such as movies, television, theater,
+                    and live performances. Stunt performers are highly skilled individuals who execute dangerous and
+                    physically demanding actions, often on behalf of actors or characters in the production.</p>
+                <p>It's important to note that becoming a professional stunt performer is a demanding career that
+                    requires dedication, physical fitness, and a commitment to safety. Many stunt performers start by
+                    attending a stunt academy to learn the basics before gaining practical experience on sets through
+                    internships, apprenticeships, or smaller productions.</p>
+                <!-- <a href="#" class="btn">contact us</a> -->
+            </div>
+        </div>
+
+        <section class="price" id="price">
+
+            <h1 class="heading">our <span> packages </span></h1>
+
+            <div class="box-container">
+
+                <div class="box">
+                    <h3 class="title">full package</h3>
+                    <h3 class="amount">$149.99</h3>
+
+                    <ul>
+                        <li><i class="fas fa-check"></i>hostel </li>
+                        <li><i class="fas fa-check"></i>training hour </li>
+                        <li><i class="fas fa-check"></i>heatlh insurance </li>
+                        <li><i class="fas fa-check"></i>food and drinks </li>
+                        <li><i class="fas fa-check"></i>safety guards </li>
+                        <li><i class="fas fa-check"></i>photos and videos </li>
+                    </ul>
+                    <a href="#" class="btn">check out</a>
+                </div>
+                <div class="box">
+                    <h3 class="title">half packages</h3>
+                    <h3 class="amount">$599.99</h3>
+
+                    <ul>
+                        <!-- <li><i class="fas fa-check"></i> </li> -->
+                        <!-- <li><i class="fas fa-check"></i> </li> -->
+                        <li><i class="fas fa-check"></i>training hour </li>
+                        <li><i class="fas fa-check"></i>health insurance </li>
+                        <li><i class="fas fa-check"></i>photos and videos </li>
+                    </ul>
+                    <a href="#" class="btn">check out</a>
+                </div>
+                <div class="box">
+                    <h3 class="title">daily packages</h3>
+                    <h3 class="amount">$699.99</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i>fix training hour </li>
+                        <li><i class="fas fa-check"></i>own gears </li>
+                        <li><i class="fas fa-check"></i>photos and videos </li>
+                        <!-- <li><i class="fas fa-check"></i> </li> -->
+                        <!-- <li><i class="fas fa-check"></i>finvitation card </li> -->
+                    </ul>
+                    <a href="#" class="btn">check out</a>
+                </div>
+                <!-- <div class="box">
+                <h3 class="title">for others</h3>
+                <h3 class="amount">$250.99</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i>full services </li>
+                    <li><i class="fas fa-check"></i>decorations </li>
+                    <li><i class="fas fa-check"></i>music and photos </li>
+                    <li><i class="fas fa-check"></i>food and drinks </li>
+                    <li><i class="fas fa-check"></i>finvitation card </li>
+                </ul>
+                <a href="#" class="btn">check out</a> -->
+            </div>
+            </div>
+        </section>
+
+
+        <!-- <trainer></trainer> -->
+
+        <section class="review" id="review">
+            <h1 class="heading">Our <span>Trainer</span></h1>
+
+            <div class="review-slider swiper-container">
+
+                <div class="swiper-wraper">
+
+                    <div class="swiper-slide box">
+                        <i class="fas fa-quote-right"></i>
+                        <div class="user">
+                            <img src="{%static 'Customer/images/About.jpg'%}" alt="">
+                            <div class="user-info">
+                                <h3>Biker suraj da</h3>
+                                <span> Head Instructor</span>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quibusdam cum voluptas!
+                            Ducimus natus ex quis non nihil nobis alias laboriosam, odio iste esse explicabo labore
+                            consectetur expedita aspernatur dolor?</p>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <i class="fas fa-quote-right"></i>
+                        <div class="user">
+                            <img src="#" alt="">
+                            <div class="user-info">
+                                <h3>Biker SAndeep</h3>
+                                <span>Instructor</span>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quibusdam cum voluptas!
+                            Ducimus natus ex quis non nihil nobis alias laboriosam, odio iste esse explicabo labore
+                            consectetur expedita aspernatur dolor?</p>
+                    </div>
+
+                    <!-- <div class="swiper-slide box">
+                        <i class="fas fa-quote-right"></i>
+                        <div class="user">
+                            <img src="#" alt="">
+                            <div class="user-info">
+                                <h3>Biker suraj da</h3>
+                                <span> happy clients</span>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quibusdam cum voluptas!
+                            Ducimus natus ex quis non nihil nobis alias laboriosam, odio iste esse explicabo labore
+                            consectetur expedita aspernatur dolor?</p>
+                    </div> --> -->
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </section>
+
+
+        <!-- footer -->
+
+
+        <section class="footer">
+            <div class="box-container">
+
+                <div class="box">
+                    <h3>branches<h3>
+                            <!-- <a href="#"> <i class="fas fa-map-marker-alt"></i> </a> -->
+                            <a href="#"> <i class="fas fa-map-marker-alt"></i> pokhara</a>
+                            <a href="#"> <i class="fas fa-map-marker-alt"></i> bhaktapur</a>
+                            <a href="#"> <i class="fas fa-map-marker-alt"></i> biratnagar</a>
+
+                </div>
+
+                <!-- <div class="box">
+                <h3>quick links<h3>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> home</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> service</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> about</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> view</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> price</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> review</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> contact</a>
+            </div> -->
+                <div class="box">
+                    <h3>contact info<h3>
+                            <!-- <a href="#"> <i class="fas fa-phone"></i> +9779851273745</a> -->
+                            <a href="#"> <i class="fas fa-phone"></i> +9779813456287</a>
+                            <a href="#"> <i class="fas fa-envelope"></i> sammmkk@gmail.com</a>
+                            <a href="#"> <i class="fas fa-envelope"></i> nammk@gmail.com</a>
+                            <a href="#"> <i class="fas fa-map-marker-alt"></i> bkt ,nepal</a>
+                </div>
+
+                <div class="box">
+                    <h3>follow us<h3>
+                            <a href="#"> <i class="fab fa-facebook-f"> </i> facebook </a>
+                            <a href="#"> <i class="fab fa-twitter"> </i> twitter </a>
+                            <a href="#"> <i class="fab fa-instagram"> </i> instagram </a>
+                            <!-- <a href="#"> <i class="fab fa-linkedin"> </i> linkedin </a> -->
+                </div>
+
+            </div>
+            <div class="credit">By <span> apex.Enum</span> all right reserved! </div>
+        </section>
+
+        <script src="{% static 'js/script.js'%}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+
+</html>

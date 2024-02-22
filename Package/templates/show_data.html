@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages</title>
+    <link rel="stylesheet" href="{% static 'show.css'%}">
+</head>
+<body>
+   <h1>our packages</h1>
+    <table style="width: 100%">
+       <tr>
+        <th>package type</th>
+        <th>Hostel</th>
+        <th>Insurance</th>
+        <th>Riding gears</th>
+        <th>Experience</th>
+        <th>Hours</th>
+       </tr>
+       {% for std in datas%}
+       <tr>
+        <td>{{ std.package_type }}</td>
+        <td>{{ std.hostel }}</td>
+        <td>{{ std.insurance }}</td>
+        <td>{{ std.riding_gears }}</td>
+        <td>{{ std.trainer-experience }}</td>
+        <td>{{ std.hours_num}}</td>
+        
+        {% endfor%}
+       </tr>
+
+
+    </table>
+</body>
+</html>
+
+

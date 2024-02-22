@@ -1,0 +1,242 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    {% for std in datas%}
+    <!-- <h1>{{ std.package_type }}</h1> -->
+    {% endfor%}
+    <table class="package_table">
+       <tr>
+        <th>ID</th>
+        <th>Package Type</th>
+        <th>Hostel</th>
+        <th>Insurance</th>
+        <th>Riding gears</th>
+        <th>Experience</th>
+        <th>Hours</th>
+        <th>Price</th>
+       </tr>
+       {% for std in datas%}
+       <tr>
+        <td>{{ std.id }}</td>
+        <td>{{ std.package_type }}</td>
+        <td>{{ std.hostel }}</td>
+        <td>{{ std.insurance }}</td>
+        <td>{{ std.riding_gears }}</td>
+        <td>{{ std.trainer_experience }}</td>
+        <td>{{ std.hours_num}}</td>
+        <td>{{ std.price}}</td>
+        <td><a href ="{%url 'check' std.id %}"><button>Check out</button></a></td>
+
+        
+        
+        {% endfor%}
+       </tr>
+       
+       
+
+    </table>
+</body>
+</html> {% endcomment %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+   
+    <table class="package_table">
+       <tr>
+        <th>ID</th>
+        <th>Package Type</th>
+        <th>Hostel</th>
+        <th>Insurance</th>
+        <th>Riding gears</th>
+        <th>Experience</th>
+        <th>Hours</th>
+        <th>Price</th>
+       </tr>
+      
+       <!-- {% for std in data %}
+       <tr>
+        <td>{{ std }}</td>
+        <td>{{ std.package_type }}</td>
+        <td>{{ std.advance_amount }}</td>
+        <td>{{ std.price }}</td>
+       
+
+        
+        
+        {% endfor%} 
+        <tr>
+        {% for array in data %}
+
+        <!-- {% for content in array %} 
+        {% for i in array %}
+            <td>{{i}}</td>
+        {% endfor %}
+        
+            <!-- <td>{{array.1}}</td>
+            <td>{{array.2}}</td>
+            <td>{{array.3}}</td> 
+        
+        <!-- {%endfor%} 
+        {% endfor%}
+        <br>
+    </tr>
+       <!-- </tr> 
+       
+       
+
+    </table>
+</body>
+</html> 
+-->
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>package || stund academy</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/table.css'%}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header class="header">
+
+        <a href="#" class="logo"><span>hidden </span> Action</a>
+
+        <nav class="navbar">
+            <a href="{% url 'landingpage' %}">home</a>
+            <a href="{% url 'show_data'%}">service</a>
+            <a href="#about">about</a>
+            <a href="{% url 'show_data'%}">package</a>
+             {% if request.session.role == 'trainer' %}
+             <a href="{% url 'my_students'%}">My clients</a>
+             {% else %}
+            <a href="{% url 'my_booking'%}">My bookings</a>
+            {% endif %}
+            <a href="{% url 'logout' %}">Log out</a>
+        </nav>
+        <div id="menu-bars" class="fas fa-bars"></div>
+
+    </header>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Availible Package</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-dark">
+						    <tr>
+						       <th>ID</th>
+                                <th>Package Type</th>
+                                <th>Hostel</th>
+                                <th>Insurance</th>
+                                <th>Riding gears</th>
+                                <th>Experience</th>
+                                <th>Hours</th>
+                                <th>Price</th>
+                               {% if request.session.role == 'user' %}
+						      <th>Checkout</th>
+                               {% endif %}
+						    </tr>
+						  </thead>
+						  <tbody>
+                          {% for std in datas %}
+						    <tr class="alert" role="alert">
+						        <td>{{ std.id }}</td>
+                                <td>{{ std.package_type }}</td>
+                                <td>{{ std.hostel }}</td>
+                                <td>{{ std.insurance }}</td>
+                                <td>{{ std.riding_gears }}</td>
+                                <td>{{ std.trainer_experience }}</td>
+                                <td>{{ std.hours_num}}</td>
+                                <td>{{ std.price}}</td>
+                                {% if request.session.role == 'user' %}
+                                <td><a href ="{%url 'check' std.id %}"><button class="select_button">select</button></a></td>
+                               {% endif %}
+                                
+						      
+						    </tr>
+                            {% endfor %}
+						    {% comment %} <tr class="alert" role="alert">
+						      <th scope="row">002</th>
+						      <td>Jacob</td>
+						      <td>Thornton</td>
+						      <td>jacobthornton@email.com</td>
+						      <td>
+						      	<a href="#" class="close" data-dismiss="alert" aria-label="Close">
+				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				          	</a>
+				        	</td>
+						    </tr> {% endcomment %}
+                            
+						    {% comment %} <tr class="alert" role="alert">
+						      <th scope="row">003</th>
+						      <td>Larry</td>
+						      <td>the Bird</td>
+						      <td>larrybird@email.com</td>
+						      <td>
+						      	<a href="#" class="close" data-dismiss="alert" aria-label="Close">
+				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				          	</a>
+				        	</td>
+						    </tr>
+						    <tr class="alert" role="alert">
+						      <th scope="row">004</th>
+						      <td>John</td>
+						      <td>Doe</td>
+						      <td>johndoe@email.com</td>
+						      <td>
+						      	<a href="#" class="close" data-dismiss="alert" aria-label="Close">
+				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				          	</a>
+				        	</td>
+						    </tr>
+						    <tr class="alert" role="alert">
+						      <th scope="row">005</th>
+						      <td>Gary</td>
+						      <td>Bird</td>
+						      <td>garybird@email.com</td>
+						      <td>
+						      	<a href="#" class="close" data-dismiss="alert" aria-label="Close">
+				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				          	</a>
+				        	</td>
+						    </tr> {% endcomment %}
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	</body>
+</html>
+
+
+
